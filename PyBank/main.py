@@ -53,11 +53,11 @@ with open(Budget_data_csv, 'r') as csvfile:
     print(f"Greatest Increase in Profits: {greatest_month} (${greatest_increase})")
     print(f"Greatest Decrease in Profits: {least_month} (${greatest_decrease})")
     
-    output_string = (f"Total Month:  {month_count}/n"
-      f"Total: $ {tot_profit_loss}/n"
-      f"Average Change: $ {average_change}/n"
-      f"Greatest Increase in Profits: {greatest_month} (${greatest_increase})/n"
-      f"Greatest Decrease in Profits: {least_month} (${greatest_decrease})/n"
+    output_string = (f"Total Month:  {month_count}\n"
+      f"Total: $ {tot_profit_loss}\n"
+      f"Average Change: $ {average_change}\n"
+      f"Greatest Increase in Profits: {greatest_month} (${greatest_increase})\n"
+      f"Greatest Decrease in Profits: {least_month} (${greatest_decrease})\n"
    )
     # write budget_data_csv back to text file
     #file =open(Budget_data_csv, 'w+')
