@@ -54,11 +54,11 @@ with open(election_data_csv, newline="" ) as csvfile:
     Lipercent = round(Li_v/votes, 3)*100
     Khanpercent = round(Khan_v/votes, 3)*100
     Otooleypercent = round(Otooley_v/votes, 3)*100
-    Correypercent = round(Correy_v/votes, 3)*100
+    Correypercent = round(Correy_v/votes)*100
 
     #print(Lipercent)
 
-    #find the winner
+    #find the winner to print in terminal
     winner = max([(nomineeslist.count(chr),chr) for chr in set(nomineeslist)])
 
     print(f"Election Results")
@@ -71,17 +71,19 @@ with open(election_data_csv, newline="" ) as csvfile:
     print(f"-------------------------------------------")
     print(f"Winner: {winner}")
     print(f"-------------------------------------------")
+    
+with open(Output_path2, 'w') as txt_file:
 
-    Output2_string = (f"Electrion Results\n"
-        f"----------------------------------\n"
-        f"Total Votes: {votes}/n"
-        f"Khan: {Khanpercent} ({Khan_v}/n"
-        f"Correy: {Correypercent} ({Correy_v}/n"
-        f"Li: {Lipercent} ({Li_v})/n"
-        f"O'Tooley: {Otooleypercent} ({Otooley_v})/n"
-        f"-------------------------------------------/n"
-        f"Winner: {winner}/n"
-        f"-------------------------------------------/n"
-    )
-    with open(Output_path2, 'w')as filename:
-        filename.write(Output2_string)
+    Election_Results = (f" Electrion Results \n"
+        f"---------------------------------- \n"
+        f"Total Votes: {votes} \n"
+        f" Khan: {Khanpercent} ({Khan_v} \n"
+        f"Correy: {Correypercent} ({Correy_v} \n"
+        f"Li: {Lipercent} ({Li_v}) \n "
+        f"O'Tooley: {Otooleypercent} ({Otooley_v}) \n"
+        f"------------------------------------------ \n"
+        f"Winner: {winner} \n"
+        f"---------------------------------------- \n")
+    print(Election_Results)
+    
+    txt_file.write(Election_Results)
